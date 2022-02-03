@@ -22,6 +22,8 @@ public class Main {
             System.out.println("+ -> deposit money");
             System.out.println("- -> withdraw money");
             System.out.println(". -> see your balance");
+            System.out.println("* -> bills");
+            System.out.println("/ -> end day");
 
             Scanner scanner = new Scanner(System.in);
             String operator = scanner.nextLine();
@@ -40,6 +42,14 @@ public class Main {
                     System.out.println("Your account balance is: $" + ba.getMoney() + "\n");
                     break;
                 case ".":
+                    System.out.println("Your account balance is: $" + ba.getMoney() + "\n");
+                    break;
+                case "*":
+                    System.out.println("You owe: $" + ba.getBill() + "\n");
+                    break;
+                case "/":
+                    System.out.println("Sleeping...");
+                    ba.passDay();
                     System.out.println("Your account balance is: $" + ba.getMoney() + "\n");
                     break;
                 default:
