@@ -5,6 +5,5 @@ public class Bank {
     public double getWithdrawalLimit() {
         return withdrawalLimit;
     }
-
 }
 
