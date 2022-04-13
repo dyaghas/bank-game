@@ -15,7 +15,7 @@ public class Main {
         BankAccount ba = new BankAccount();
         ba.createBankAccount();
 
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        DecimalFormat numberFormat = new DecimalFormat("#.00"); //It limits the number digits.
 
         boolean carryOn = true;
 

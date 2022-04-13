@@ -10,7 +10,9 @@ public class BankAccount extends Bank{
     private int actionPoints = 3;
     private int day;
     private String name;
+
     Scanner scanner = new Scanner(System.in);
+    Random rand = new Random();
 
     public void createBankAccount() {
             System.out.print("Choose your name: ");
@@ -54,6 +56,14 @@ public class BankAccount extends Bank{
         System.out.println(bill);
 
         resetActionPoints();
+
+        if(money >= 100) { // the player can be robbed if he has more than $100.00
+            rand = new Random();
+            if(rand.nextFloat(10) < money / 1000.0) {
+                money = money * rand.nextFloat(1);
+                System.out.println("Someone robbed you. money remaining with you: " + money);
+            }
+        }
     }
 
     protected void work() {
