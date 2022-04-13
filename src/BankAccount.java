@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class BankAccount extends Bank{
+public class BankAccount extends Bank implements BankInterface{
 
     private double money = 1200.00;
     private double bankMoney = 0;
@@ -12,9 +12,9 @@ public class BankAccount extends Bank{
     private String name;
 
     Scanner scanner = new Scanner(System.in);
-    Random rand = new Random();
 
-    public void createBankAccount() {
+    @Override
+    public void createBankAccount(){
             System.out.print("Choose your name: ");
             name = scanner.nextLine();
         }
@@ -39,6 +39,7 @@ public class BankAccount extends Bank{
             }
     }
 
+    @Override
     public void passDay() {
         money = money - bill; //Pay bills automatically
         bill = 0;
@@ -71,11 +72,13 @@ public class BankAccount extends Bank{
         money = money + salary;
     }
 
+    @Override
     public void useActionPoint() {
         actionPoints = actionPoints - 1;
     }
 
     //getters
+    @Override
     public double getMoney() {
         return money;
     }
